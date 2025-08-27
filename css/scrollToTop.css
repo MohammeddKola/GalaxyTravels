@@ -1,0 +1,72 @@
+ #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(135deg, #001f3f, #0074D9); /* background color */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    #preloader.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    
+
+    .loader {
+      position: relative;
+      width: 250px;
+      height: 250px;
+    }
+
+
+
+ .loader .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+  z-index: 2;
+  animation: moveRight 3.5s linear infinite;
+
+  /* NEW background properties */
+  background-size: contain;  /* scale logo properly */
+}
+
+
+    .globe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+    .globe img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 12px;
+}
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    @keyframes spinReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+    @keyframes moveRight {
+      0%   { left: 20%; opacity: 0; }
+      10%  { left: 30%; opacity: 1; }
+      80%  { left: 85%; opacity: 1; }
+      90%  { left: 85%; opacity: 0; }
+      100% { left: 10%; opacity: 0; }
+    }
